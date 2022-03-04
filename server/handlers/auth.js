@@ -5,7 +5,7 @@ exports.register = async (req, res, next) => {
     const user = await db.User.create(req.body);
     const { id, username } = user;
 
-    res.json({ id, username });
+    res.status(201).json({ id, username });
   } catch (error) {
     next(error);
   }
