@@ -1,3 +1,6 @@
+require("dotenv").config();
+const jwt = require("jsonwebtoken");
+
 const db = require("../models");
 
 exports.register = async (req, res, next) => {
@@ -5,7 +8,9 @@ exports.register = async (req, res, next) => {
     const user = await db.User.create(req.body);
     const { id, username } = user;
 
-    res.status(201).json({ id, username });
+    const token = jwt.sign({ id, username }, process.env.SECRET_KEY);
+
+    res.status(201).json({ id, username, token });
   } catch (error) {
     if (error.code === 11000) {
       error.message = "Sorry, that username is already registered!";
@@ -22,9 +27,12 @@ exports.login = async (req, res, next) => {
 
     const valid = await user.comparePassword(req.body.password);
     if (valid) {
+      const token = jwt.sign({ id, username }, process.env.SECRET_KEY);
+
       res.json({
         id,
         username,
+        token,
       });
     } else {
       throw new Error();
