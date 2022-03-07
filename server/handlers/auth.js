@@ -7,6 +7,9 @@ exports.register = async (req, res, next) => {
 
     res.status(201).json({ id, username });
   } catch (error) {
+    if (error.code === 11000) {
+      error.message = "Sorry, that username is already registered!";
+    }
     next(error);
   }
 };
@@ -24,9 +27,10 @@ exports.login = async (req, res, next) => {
         username,
       });
     } else {
-      throw new Error("Invalid Username/Password");
+      throw new Error();
     }
   } catch (error) {
+    error.message = "Invalid Username/Password";
     next(error);
   }
 };
