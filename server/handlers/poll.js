@@ -11,6 +11,19 @@ exports.showPolls = async (req, res, next) => {
   }
 };
 
+exports.usersPolls = async (req, res, next) => {
+  const { id } = req.decoded;
+
+  try {
+    const user = await db.User.findById(id).populate("polls");
+    console.log(user);
+    res.status(200).json(user.polls);
+  } catch (error) {
+    error.status(400);
+    next(error);
+  }
+};
+
 exports.createPoll = async (req, res, next) => {
   try {
     const { id } = req.decoded;
