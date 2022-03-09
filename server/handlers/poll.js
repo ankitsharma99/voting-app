@@ -12,14 +12,13 @@ exports.showPolls = async (req, res, next) => {
 };
 
 exports.usersPolls = async (req, res, next) => {
-  const { id } = req.decoded;
-
   try {
+    const { id } = req.decoded;
     const user = await db.User.findById(id).populate("polls");
-    console.log(user);
+
     res.status(200).json(user.polls);
   } catch (error) {
-    error.status(400);
+    error.status = 400;
     next(error);
   }
 };
