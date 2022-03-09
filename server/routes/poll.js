@@ -7,6 +7,4 @@ router.route("/").get(handle.showPolls).post(auth, handle.createPoll);
 
 router.get("/user", auth, handle.usersPolls);
 
-// router.route('/:id').get().post().delete()
-
 module.exports = router;
