@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const User = require("./user");
 
 const optionSchema = new mongoose.Schema({
   option: String,
@@ -7,6 +8,7 @@ const optionSchema = new mongoose.Schema({
     default: 0,
   },
 });
+
 const pollSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
@@ -20,5 +22,4 @@ const pollSchema = new mongoose.Schema({
     default: Date.now,
   },
 });
-
 module.exports = mongoose.model("Poll", pollSchema);

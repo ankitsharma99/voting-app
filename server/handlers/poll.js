@@ -14,8 +14,9 @@ exports.showPolls = async (req, res, next) => {
 exports.usersPolls = async (req, res, next) => {
   try {
     const { id } = req.decoded;
-    const user = await db.User.findById(id).populate("polls");
 
+    const user = await db.User.findById(id).populate("polls");
+    console.log(user);
     res.status(200).json(user.polls);
   } catch (error) {
     error.status = 400;
@@ -30,6 +31,7 @@ exports.createPoll = async (req, res, next) => {
     const user = await db.User.findById(id);
 
     const { question, options } = req.body;
+    // console.log(req.body);
     const poll = await db.Poll.create({
       question,
       user,
@@ -40,7 +42,9 @@ exports.createPoll = async (req, res, next) => {
     });
 
     user.polls.push(poll._id);
+
     await user.save();
+
     res.status(201).json({ ...poll._doc, user: user._id });
   } catch (error) {
     error.status = 400;
