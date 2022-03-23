@@ -8,4 +8,10 @@
 * Mongoose
 * dotenv
 * body-parser    
-* bcryptsjs -> to encrtyp passwords
+* bcryptsjs -> to encrypt  passwords
+
+## How to run?
+> Clone this repo
+> run npm install
+> run ./start.sh
+
