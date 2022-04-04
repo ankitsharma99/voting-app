@@ -1,13 +1,16 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import { Provider } from "react-redux";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import decode from "jwt-decode";
 
-import Auth from "../components/Auth";
-import ErrorMessage from "../components/ErrorMessage";
-import { Provider } from "react-redux";
+
 import { setToken } from "../services/api";
 import { store } from "../store";
 import { setCurrentUser } from "../store/actions/auth";
 import { addError } from "../store/actions/error";
+import RouteViews from "./RouteViews";
+import NavBar from "./NavBar";
+
 // import api from "../services/api";
 
 if (localStorage.jwtToken) {
@@ -22,10 +25,13 @@ if (localStorage.jwtToken) {
 
 const App = () => (
   <Provider store={store}>
-    <div>
-      <Auth authType={"login"} />
-      <ErrorMessage />
-    </div>
+    <Router>
+      <Fragment>
+        
+        <NavBar />
+        <RouteViews />
+      </Fragment>
+    </Router>
   </Provider>
 );
 
