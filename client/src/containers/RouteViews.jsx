@@ -1,8 +1,26 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Routes, Route, withRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 import AuthPage from "../pages/AuthPage";
+
+
+function withRouter(Component) {
+  function ComponentWithRouterProp(props) {
+    let location = useLocation();
+    let navigate = useNavigate();
+    let params = useParams();
+    return (
+      <Component
+        {...props}
+        router={{ location, navigate, params }}
+      />
+    );
+  }
+
+  return ComponentWithRouterProp;
+}
 
 const RouteViews = ({ auth }) => (
   <main>
@@ -28,4 +46,4 @@ const RouteViews = ({ auth }) => (
   </main>
 );
 
-export default connect((store) => ({ auth: store.auth }))(RouteViews);
+export default withRouter(connect((store) => ({ auth: store.auth }))(RouteViews));
