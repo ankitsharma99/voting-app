@@ -2,22 +2,11 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Auth from "../components/Auth";
 
-const RouteViews = () => (
+const RouteViews = (props) => (
   <main>
     <Routes>
-      <Route
-        path='/login'
-        render={() => {
-          <Auth authType='login' />;
-        }}
-      />
-      <Route
-        path='/register'
-        render={() => {
-          <Auth authType='register' />;
-        }}
-      />
-      
+      <Route exact path='/login' element={<Auth authType='login' />} />
+      <Route exact path='/register' element={<Auth authType='register' />} />
     </Routes>
   </main>
 );
