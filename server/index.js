@@ -14,7 +14,7 @@ const handle = require("./handlers");
 const db = require("./models"); // models path
 const routes = require("./routes");
 
-app.use(cors());
+app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {

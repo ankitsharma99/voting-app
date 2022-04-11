@@ -32,7 +32,7 @@ export const getUserPolls = () => {
       dispatch(setPolls(polls));
       dispatch(removeError());
     } catch (err) {
-      const error = err.response.data;
+      const { error } = err.response.data;
       dispatch(addError(error.message));
     }
   };
@@ -71,7 +71,7 @@ export const vote = (path, data) => {
       dispatch(setCurrentPoll(poll));
       dispatch(removeError());
     } catch (err) {
-      const error = error.response.data;
+      const error = err.response.data;
       dispatch(addError(error.message));
     }
   };

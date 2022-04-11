@@ -1,15 +1,14 @@
-import React, { Component, Fragment } from "react";
+import React, {Fragment } from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import decode from "jwt-decode";
-
 import { setToken } from "../services/api";
 import { store } from "../store";
 import { setCurrentUser } from "../store/actions/auth";
 import { addError } from "../store/actions/error";
 import RouteViews from "./RouteViews";
 import NavBar from "./NavBar";
-
+  
 // import api from "../services/api";
 
 if (localStorage.jwtToken) {
