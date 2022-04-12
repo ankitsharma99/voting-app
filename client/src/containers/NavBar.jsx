@@ -18,7 +18,7 @@ const NavBar = ({ auth, logout }) => (
           <Link className="navbar-item" to='/login'>Login</Link>
         </li>
         <li>
-          <Link className="navbar-item" to='/test'>Test</Link>
+          <Link className="navbar-item" to='/poll/new'>Create Poll</Link>
         </li>
         <li>
           <a className="navbar-item" onClick={logout}>Logout</a>

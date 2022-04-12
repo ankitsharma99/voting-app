@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Montserrat:wght@300;700&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300&family=Poppins:ital,wght@0,200;0,400;0,800;1,400;1,800&display=swap');
+
+
 .navbar {
     background-color: var(--dark);
     font-weight: 600;
@@ -18,7 +21,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
 }
 
 .navbar-item {

@@ -28,12 +28,12 @@ class Polls extends Component {
     return (
       <Fragment>
         {auth.isAuthenticated && (
-          <div>
-            <button onClick={getPolls}>All Polls</button>
-            <button onClick={getUserPolls}>My Polls</button>
+          <div className="button_center">
+            <button className="button" onClick={getPolls}>All Polls</button>
+            <button className="button" onClick={getUserPolls}>My Polls</button>
           </div>
         )}
-        <ul>{polls}</ul>
+        <ul className="polls">{polls}</ul>
       </Fragment>
     );
   }
