@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Montserrat:wght@300;700&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300&family=Poppins:ital,wght@0,200;0,400;0,800;1,400;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@1,400;1,600;1,700&family=Fira+Sans:wght@200&family=Montserrat:wght@300;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Poppins:ital,wght@0,200;0,400;0,800;1,400;1,800&display=swap');
+
 
 .form {
     width: 50%;
+    display: flex;
     margin: 1rem auto;
-    /* background-color: var(--dark); */
+    flex-direction: column;
+    align-items: center;
     padding: 1rem;
     border-radius: 0.4rem;
 }
@@ -22,7 +25,37 @@
 .form-label {
     color: var(--dark);
     text-transform: uppercase;
-    font-size: 0.8rem;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
     font-weight: 800;
-
+    font-size: 1.5rem;
 }
+
+
+.loginOrRegister {
+    color: var(--dark);
+    padding: 1rem;
+    /* text-transform: uppercase; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.createPollTitle {
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    padding: 0.5rem;
+    cursor: default;
+}
+
+.createPollTitle:hover {
+    text-decoration: underline;
+    transition: all 0.4s ease-out;
+}
+

@@ -1,15 +1,15 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-
 import { logout } from "../store/actions";
 
 const NavBar = ({ auth, logout }) => (
+  
   <div className='navbar'>
     <div className='container'>
       <ul className='navbar-container'>
         <li>
-          <Link className='navbar-brand' to='/'>
+          <Link className='navbar-item' to='/'>
             Home
           </Link>
         </li>
@@ -36,7 +36,7 @@ const NavBar = ({ auth, logout }) => (
             </li>
 
             <li>
-              <a className='navbar-item' onClick={logout}>
+              <a className='navbar-item logout' onClick={logout}>
                 Logout
               </a>
             </li>
@@ -44,7 +44,7 @@ const NavBar = ({ auth, logout }) => (
         )}
       </ul>
       {auth.isAuthenticated && (
-        <p className='navbar-user'>Logged in as {auth.user.username}</p>
+        <p className='navbar-user'>Logged in as "<span>{auth.user.username}</span>"</p>
       )}
     </div>
   </div>

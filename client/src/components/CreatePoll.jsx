@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-
 import { createPoll } from "../store/actions";
 
 class CreatePoll extends Component {
@@ -31,40 +30,53 @@ class CreatePoll extends Component {
     this.setState({ options });
   }
 
-  handleSubmit (e) {
-      e.preventDefault();
-      this.props.createPoll(this.state);
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createPoll(this.state);
   }
 
   render() {
     const options = this.state.options.map((options, i) => (
       <Fragment key={i}>
-        <label className="form-label">option</label>
-        <input className="form-input"
+        
+        <label className='form-label'>option</label>
+        <input
+          placeholder='Enter as many options as you want by clicking on ADD OPTIONS'
+          className='form-input'
           type='text'
           value={options}
           onChange={(e) => this.handleAnswer(e, i)}
-        /> 
+        />
       </Fragment>
     ));
     return (
-      <form className="form" onSubmit={this.handleSubmit}>
-        <label className="form-label" htmlFor='question'>Question</label>
-        <input className="form-input"
-          type='text'
-          name='question'
-          value={this.state.question}
-          onChange={this.handleChange}
-        />
-
-        {options}
-        <div className="button_center">
-        <button className="button" type='button' onClick={this.addAnswer}>
-          Add options
-        </button>
-        <button className="button" type='submit'>Submit</button>
+      <div>
+        <div className='createPollTitle'>
+          Create a Poll here, You can add as many options as you want!
         </div>
-      </form>
+        <form className='form' onSubmit={this.handleSubmit}>
+          <label className='form-label' htmlFor='question'>
+            Question
+          </label>
+          <input
+            placeholder='Enter your question here. Eg: What is the best coding platform?'
+            className='form-input'
+            type='text'
+            name='question'
+            value={this.state.question}
+            onChange={this.handleChange}
+          />
+          {options}
+          <div className='button_center'>
+            <button className='button' type='button' onClick={this.addAnswer}>
+              Add options
+            </button>
+            <button className='button' type='submit'>
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
     );
   }
 }

@@ -24,15 +24,19 @@ class Polls extends Component {
         {poll.question}
       </li>
     ));
-    console.log(polls);
+    // console.log(polls);
     return (
       <Fragment>
+        
         {auth.isAuthenticated && (
           <div className="button_center">
             <button className="button" onClick={getPolls}>All Polls</button>
             <button className="button" onClick={getUserPolls}>My Polls</button>
           </div>
         )}
+
+        <div className="available-polls">Available Polls</div>
+        <div className="click-poll-title">Click on a poll to vote</div>
         <ul className="polls">{polls}</ul>
       </Fragment>
     );

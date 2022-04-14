@@ -29,10 +29,19 @@ class Auth extends Component {
   }
 
   render() {
+    let logOrRegister;
+    let {authType} = this.props;
+    if(authType === 'register')  {
+      logOrRegister = 'register';
+    }
+    else {
+      logOrRegister = 'login';
+    }
     const { username, password } = this.state;
 
     return (
-      <div>
+      <div className="main-div">
+        <div className="loginOrRegister">{logOrRegister === 'register' ? "Register a new user" : "Login for an existing user"}</div>
         <form className='form' onSubmit={this.handleSubmit}>
           <label htmlFor='username' className="form-label">username</label>
           <input
