@@ -19,6 +19,10 @@ class Polls extends Component {
 
   render() {
     const { auth, getPolls, getUserPolls } = this.props;
+
+    if(polls === undefined) {
+      return <div className="no-polls">No polls to show, Create a new Poll to see something here</div>
+    }
     const polls = this.props.polls.map((poll) => (
       <li onClick={() => this.handleSelect(poll._id)} key={poll._id}>
         {poll.question}
