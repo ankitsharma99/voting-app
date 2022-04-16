@@ -26,7 +26,7 @@
 
 .navbar-item {
     color: white;
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
     /* transition: all 0.4s ease-out; */
 }
@@ -55,4 +55,8 @@ span {
 
 .logout {
     color: red;
+}
+
+.login {
+    color: yellowgreen;
 }

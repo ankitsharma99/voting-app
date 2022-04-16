@@ -7,9 +7,13 @@
     align-items: center;
     background-color: var(--light);
     color: var(--dark);
-    padding: 0.5rem;
+    padding: 1rem;
     text-align:  center;
     font-weight: 800;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .polls li:nth-child(odd) {
@@ -21,6 +25,8 @@
     background-color: var(--dark);
     color: var(--light);
     cursor: pointer;
+    transition: all 0.4s ease-out;
+
 }
 
 .poll-title {
@@ -40,12 +46,12 @@
     font-size: 3rem;
     font-weight: 800;
     margin: 2rem;
-}
-
-.available-polls:hover {
-    text-decoration: underline;
     cursor: default;
 }
+
+/* .available-polls:hover {
+    
+} */
 
 .click-poll-title {
     color: var(--dark);

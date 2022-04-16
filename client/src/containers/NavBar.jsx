@@ -21,7 +21,7 @@ const NavBar = ({ auth, logout }) => (
               </Link>
             </li>
             <li>
-              <Link className='navbar-item' to='/login'>
+              <Link className='navbar-item login' to='/login'>
                 Login
               </Link>
             </li>
