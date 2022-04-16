@@ -42,7 +42,7 @@ class Polls extends Component {
           </div>
         )}
         
-        <div className='available-polls'>Available Polls</div>
+        <div className='available-polls'>Available Polls 👇</div>
         {auth.isAuthenticated && <div className='click-poll-title'>Click on a poll to vote</div>}
         <ul className='polls'>{polls}</ul>
       </Fragment>
