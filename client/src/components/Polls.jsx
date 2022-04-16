@@ -20,9 +20,9 @@ class Polls extends Component {
   render() {
     const { auth, getPolls, getUserPolls } = this.props;
 
-    if(polls === undefined) {
-      return <div className="no-polls">No polls to show, Create a new Poll to see something here</div>
-    }
+    // if(polls === undefined) {
+    //   return <div className="no-polls">No polls to show, Create a new Poll to see something here</div>
+    // }
     const polls = this.props.polls.map((poll) => (
       <li onClick={() => this.handleSelect(poll._id)} key={poll._id}>
         {poll.question}
@@ -31,17 +31,20 @@ class Polls extends Component {
     // console.log(polls);
     return (
       <Fragment>
-        
         {auth.isAuthenticated && (
-          <div className="button_center">
-            <button className="button" onClick={getPolls}>All Polls</button>
-            <button className="button" onClick={getUserPolls}>My Polls</button>
+          <div className='button_center'>
+            <button className='button' onClick={getPolls}>
+              All Polls
+            </button>
+            <button className='button' onClick={getUserPolls}>
+              My Polls
+            </button>
           </div>
         )}
-
-        <div className="available-polls">Available Polls</div>
-        <div className="click-poll-title">Click on a poll to vote</div>
-        <ul className="polls">{polls}</ul>
+        
+        <div className='available-polls'>Available Polls</div>
+        {auth.isAuthenticated && <div className='click-poll-title'>Click on a poll to vote</div>}
+        <ul className='polls'>{polls}</ul>
       </Fragment>
     );
   }

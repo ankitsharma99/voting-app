@@ -39,5 +39,3 @@ userSchema.methods.comparePassword = async function (attempt, next) {
   }
 };
 module.exports = mongoose.model("User", userSchema);
-
-//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjhkMThhODM1MTFlYmQ0Yjc4M2Y0NyIsInVzZXJuYW1lIjoidGVzdCIsImlhdCI6MTY0Njg0MjI1MH0.beHf7AzqOMmLGVopk6ytxLdqwnit8bkVhZixiyY8V84

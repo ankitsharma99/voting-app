@@ -1,11 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@1,400;1,600;1,700&family=Fira+Sans:wght@200&family=Montserrat:wght@300;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Poppins:ital,wght@0,200;0,400;0,800;1,400;1,800&display=swap');
 
-@import './styles/base.css';
-@import './styles/reset.css';
-@import './styles/error.css';
-@import './styles/navbar.css';
-@import './styles/utilities.css';
-@import './styles/form.css';
-@import './styles/buttons.css';
-@import './styles/polls.css';
-@import './styles/poll.css';
+
+.auth_vote {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem auto;
+}
+
+.found {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem auto;
+
+}
