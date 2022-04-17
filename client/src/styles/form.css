@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@1,400;1,600;1,700&family=Fira+Sans:wght@200&family=Montserrat:wght@300;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Poppins:ital,wght@0,200;0,400;0,800;1,400;1,800&family=Raleway:wght@400;500;600&display=swap');
+
+.form {
+    width: 50%;
+    display: flex;
+    margin: 1rem auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0.4rem;
+}
+
+.form-input {
+    width: 50%;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border: 1px solid var(--dark);
+    border-radius: 0.4rem;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 1rem;
+}
+
+.form-label {
+    color: var(--dark);
+    text-transform: uppercase;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+
+.loginOrRegister {
+    color: var(--dark);
+    padding: 1rem;
+    /* text-transform: uppercase; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.createPollTitle {
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    padding: 2rem;
+    cursor: default;
+    font-weight: bold;
+}
+
+

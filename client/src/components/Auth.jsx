@@ -25,33 +25,48 @@ class Auth extends Component {
 
     e.preventDefault();
 
-    this.props.authUser(authType || 'login', { username, password });
+    this.props.authUser(authType || "login", { username, password });
   }
 
   render() {
+    let logOrRegister;
+    let {authType} = this.props;
+    if(authType === 'register')  {
+      logOrRegister = 'register';
+    }
+    else {
+      logOrRegister = 'login';
+    }
     const { username, password } = this.state;
 
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor='username'>username</label>
+      <div className="main-div">
+        <div className="loginOrRegister">{logOrRegister === 'register' ? "Register a new user" : "Login for an existing user"}</div>
+        <form className='form' onSubmit={this.handleSubmit}>
+          <label htmlFor='username' className="form-label">username</label>
           <input
+            className='form-input'
             type='text'
             value={username}
             name='username'
-            autoComplete="off"
+            autoComplete='off'
             onChange={this.handleChange}
           />
 
-          <label htmlFor='password'>password</label>
+          <label htmlFor='password' className="form-label">password</label>
           <input
+            className='form-input'
             type='password'
             value={password}
             name='password'
-            autoComplete="off"
+            autoComplete='off'
             onChange={this.handleChange}
           />
-          <button type='submit'>Submit</button>
+          <div className='button_center'>
+            <button className='button' type='submit'>
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     );

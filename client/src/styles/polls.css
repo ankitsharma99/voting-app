@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@1,400;1,600;1,700&family=Fira+Sans:wght@200&family=Montserrat:wght@300;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Poppins:ital,wght@0,200;0,400;0,800;1,400;1,800&family=Raleway:wght@400;500;600&display=swap');
+
+.polls li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light);
+    color: var(--dark);
+    padding: 1rem;
+    text-align:  center;
+    font-weight: 800;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.polls li:nth-child(odd) {
+    background-color: white;
+}
+
+.polls li:hover {
+    /* border: 2px solid var(--dark); */
+    background-color: var(--dark);
+    color: var(--light);
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+
+}
+
+.poll-title {
+    color: var(--dark);
+    font-size: 2rem;
+    margin-top: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.available-polls {
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 2rem;
+    cursor: default;
+}
+
+/* .available-polls:hover {
+    
+} */
+
+.click-poll-title {
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1rem;
+}
+
+.no-polls {
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1rem;
+}

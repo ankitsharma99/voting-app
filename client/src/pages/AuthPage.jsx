@@ -1,12 +1,12 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 
 import Auth from "../components/Auth";
 import ErrorMessage from "../components/ErrorMessage";
 
 const AuthPage = ({ authType, isAuthenticated }) => {
-  if (isAuthenticated) return <Navigate to='/' />;
+  if (isAuthenticated) return <Redirect to='/' />;
 
   return (
     <div>

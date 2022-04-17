@@ -4,23 +4,43 @@ const mongoose = require("mongoose");
 mongoose.set("debug", true);
 mongoose.Promise = global.Promise;
 
-mongoose.connect(process.env.MONGO_URI);
-
-const db = require("./models/index");
+mongoose
+  .connect(
+    `mongodb+srv://ankit:8250487740@cluster0.rcmk0.mongodb.net/vote?retryWrites=true&w=majority`
+  )
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 const users = [
-  { username: "username", password: "password" },
+  { username: "admin", password: "password" },
   { username: "ankit", password: "password" },
 ];
 
 const polls = [
   {
-    question: "Cast your vote",
-    options: ["CONGRESS", "BJP", "AAP"],
+    question: "Vote for a party",
+    options: [
+      "CONGRESS",
+      "BJP - Bhartiya Janta Party",
+      "AAP - Aam Aadmi Party",
+      "TMC - Trinamool Congress",
+      "SHIV SENA",
+    ],
   },
   {
-    question: "Best gaming consoles?",
-    options: ["XBOX ONE", "PS4", "NINTENDO"],
+    question:
+      "Best platform to improve problem solving and programming logic? Choose from the following",
+    options: [
+      "LeetCode",
+      "CodeForces",
+      "AtCoder",
+      "HackerRank",
+      "GeeksForGeeks",
+    ],
   },
 ];
 
@@ -44,7 +64,7 @@ const seed = async () => {
       polls.map(async (poll) => {
         poll.options = poll.options.map((option) => ({ option, votes: 0 }));
         const data = await db.Poll.create(poll);
-        const user = await db.User.findOne({ username: "username" });
+        const user = await db.User.findOne({ username: "admin" });
         data.user = user;
         user.polls.push(data._id);
         await user.save();

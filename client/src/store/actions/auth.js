@@ -28,11 +28,12 @@ export const authUser = (path, data) => {
       localStorage.setItem("jwtToken", token);
       api.setToken(token);
       dispatch(setCurrentUser(user));
+      // console.log(user.username);
       dispatch(removeError());
     } catch (err) {
       const error = err.response.data;
 
-      dispatch(addError(error.err));
+      dispatch(addError(error.message));
     }
   };
 };

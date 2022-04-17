@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@1,400;1,600;1,700&family=Fira+Sans:wght@200&family=Montserrat:wght@300;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Poppins:ital,wght@0,200;0,400;0,800;1,400;1,800&family=Raleway:wght@400;500;600&display=swap');
+
+.button {
+    background-color: var(--dark);
+    border: 2px solid var(--light);
+    border-radius: 0.5rem;
+    color: var(--light);
+    font-size: 1rem;
+    margin: 1rem 0.5rem;
+    padding: 0.2rem 1rem;
+    transition: all 0.4s ease-out;
+    font-weight: 700;
+}
+
+.button:hover {
+    background-color: var(--light);
+    cursor: pointer;
+    color: var(--dark);   
+    border: 2px solid var(--dark);
+    border-radius: 0.5rem;
+    transition: all 0.4s ease-out;
+}
+
+.button_center {
+    display: flex;
+    justify-content: center ;
+}
