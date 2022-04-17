@@ -41,7 +41,7 @@ class CreatePoll extends Component {
         
         <label className='form-label'>option</label>
         <input
-          placeholder='Enter as many options as you want by clicking on ADD OPTIONS'
+          placeholder='Click Add options to create a new option'
           className='form-input'
           type='text'
           value={options}
@@ -59,7 +59,7 @@ class CreatePoll extends Component {
             Question
           </label>
           <input
-            placeholder='Enter your question here. Eg: What is the best coding platform?'
+            placeholder='Enter your question here'
             className='form-input'
             type='text'
             name='question'
