@@ -4,9 +4,16 @@ const mongoose = require("mongoose");
 mongoose.set("debug", true);
 mongoose.Promise = global.Promise;
 
-mongoose.connect(process.env.MONGO_URI);
-
-const db = require("./models/index");
+mongoose
+  .connect(
+    `mongodb+srv://ankit:8250487740@cluster0.rcmk0.mongodb.net/vote?retryWrites=true&w=majority`
+  )
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 const users = [
   { username: "admin", password: "password" },
@@ -15,12 +22,25 @@ const users = [
 
 const polls = [
   {
-    question: "Cast your vote",
-    options: ["CONGRESS", "BJP", "AAP"],
+    question: "Vote for a party",
+    options: [
+      "CONGRESS",
+      "BJP - Bhartiya Janta Party",
+      "AAP - Aam Aadmi Party",
+      "TMC - Trinamool Congress",
+      "SHIV SENA",
+    ],
   },
   {
-    question: "Best gaming consoles?",
-    options: ["XBOX ONE", "PS4", "NINTENDO"],
+    question:
+      "Best platform to improve problem solving and programming logic? Choose from the following",
+    options: [
+      "LeetCode",
+      "CodeForces",
+      "AtCoder",
+      "HackerRank",
+      "GeeksForGeeks",
+    ],
   },
 ];
 
