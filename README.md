@@ -1,4 +1,4 @@
-# A Voting application using MERN stack
+# A Voting application using MERN Stack
  
 ## Tools used
 * ExpressJS
